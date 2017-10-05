@@ -6,12 +6,12 @@ class ListsController < ApplicationController
       @userlists = @lists.where(user_id: current_user.id)
     end
 
-    def show
-      @list = List.find(params[:id])
-    end
-
     def new
       @list = List.new
+    end
+
+    def show
+      @list = List.find(params[:id])
     end
 
     def create
@@ -39,7 +39,7 @@ class ListsController < ApplicationController
 
     def destroy
       List.destroy(params[:id])
-      redirect_to list_url
+      redirect_to lists_path
     end
 
     protected
