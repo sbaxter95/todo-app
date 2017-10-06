@@ -1,3 +1,12 @@
+<% if @list.errors.any? %>
+<h3><%= pluralize(@list.errors.count, "error") %> prohibited this list item from being saved:</h3>
+<ul>
+  <% @list.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for(@list) do |f| %>
 
   <%= f.label :item %>

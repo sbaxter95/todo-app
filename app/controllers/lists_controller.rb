@@ -15,26 +15,25 @@ class ListsController < ApplicationController
     end
 
     def create
-      @user = User.find(current_user.id)
-
-      new_item = List.create(list_params)
-      new_item.user_id = current_user.id
-      new_item.save
-
-      redirect_to new_item
-
+      @list = current_user.lists.create(list_params)
+      if @list.save
+        redirect_to "/lists"
+      else
+        render :new
+      end
+    end
+    
+      def update
+      @list = current_user.lists.find(params[:id])
+      if @list.update(list_params)
+        redirect_to "/lists"
+      else
+        render :edit
+      end
     end
 
     def edit
       @list = List.find(params[:id])
-    end
-
-    def update
-
-      list = List.find(params[:id])
-      list.update(list_params)
-
-      redirect_to list
     end
 
     def destroy
