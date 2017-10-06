@@ -4,7 +4,7 @@
 
 body {
 	padding: 30px;
-	margin-left: 400px;
+	font-family: 'American Typewriter'
 }
 
 li {
@@ -16,12 +16,31 @@ img {
 	height: 25px;
 }
 
-.button {
-	text-decoration: none !important;
-	color: white !important;
+a {
+	text-decoration: none;
+	color: white;
 	display: inline-block;
 	border-radius: 5px;
 	margin: 10px;
 	padding: 10px;
 	background-color: black;
+	-webkit-box-shadow: 10px 10px 31px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 31px -6px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 31px -6px rgba(0,0,0,0.75);
+}
+
+hr {
+	-webkit-box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 31px -1px rgba(0,0,0,0.75);
+}
+
+.container {
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 200px;
+	padding: 10px;
+	border-radius: 5px;
+	border: solid black 2px;
 }
